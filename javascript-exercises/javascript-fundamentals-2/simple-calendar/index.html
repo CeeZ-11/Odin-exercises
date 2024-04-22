@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple calendar</title>
+    <style>
+         ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: baseline;
+        }
+        li {
+            width: calc(100% / 4);
+            text-align: center;
+            border: 1px solid #dddddd;
+            background-color: rgb(51, 51, 125);
+            color: white;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        li:nth-child(7n) {
+            marchgin-right: 0;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <label for="month">Select month: </label>
+    <select id="month">
+    <option value="january">January</option>
+    <option value="february">February</option>
+    <option value="march">March</option>
+    <option value="april">April</option>
+    <option value="may">May</option>
+    <option value="june">June</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
+    </select>
+
+    <h1>January</h1>
+
+    <ul>
+        <!-- Calendar days will be dynamically generated here -->
+    </ul>
+
+<script>
+    const select = document.querySelector('select');
+    const list = document.querySelector('ul');
+    const h1 = document.querySelector('h1');
+    let daysInMonth;
+
+    select.addEventListener('change', () => {
+    const choice = select.value;
+
+    // ADD CONDITIONAL HERE
+
+      let days = 31;
+    if (choice === "February") {
+      days = 28;
+    } else if (
+      choice === "April" ||
+      choice === "June" ||
+      choice === "September" ||
+      choice === "November"
+    ) 
+    {
+      days = 30;
+    }
+ 
+    createCalendar(days, choice);
+    });
+
+    function createCalendar(days, choice) {
+    list.innerHTML = '';
+    h1.textContent = choice.charAt(0).toUpperCase() + choice.slice(1);
+    for (let i = 1; i <= days; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = i;
+        list.appendChild(listItem);
+    }
+    }
+
+createCalendar(31, 'January');
+</script>
+
+    
+</body>
+</html>

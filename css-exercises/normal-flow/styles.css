@@ -1,0 +1,23 @@
+/*Normal Flow css*/
+
+body {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  p {
+    background: rgb(255 84 104 / 30%);
+    border: 2px solid rgb(255 84 104);
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  span {
+    background: white;
+    border:
+  }
+img{
+   width: 400px;
+   height: 50px;
+   
+}

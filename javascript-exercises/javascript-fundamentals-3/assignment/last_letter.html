@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Function: Last Letter </h1>
+    <p> Write a function called lastLetter that takes a string and returns the very last letter of that string:
+        <br>
+    lastLetter("abcd") should return "d"</p>
+
+    <script>
+        let para = document.querySelector('p');
+        let x = "last letter";
+
+
+        function lastLetter(x){
+            return x.charAt(x.length - 1);
+        }
+
+        para.textContent = lastLetter(x);
+
+    </script>
+    
+</body>
+</html>
